@@ -2,10 +2,15 @@
   --background-color-one: #fafbfc;
   --background-color-two: #edf2fc;
   --primary: #0061ff;
+  --secondary: #f74338;
   --secondary-one: #feeeb6;
   --secondary-two: #ffcbc3;
   --secondary-three: #b4e0c5;
   --secondary-four: #ccdfff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -18,6 +23,9 @@ html {
 
 body {
   margin: 0;
+  width: 100vw;
+  min-width: 350px;
+  overflow-x: hidden;
 }
 
 a:link,
@@ -92,6 +100,7 @@ strong {
 
 img {
   align-self: self-end;
+  max-height: 80vh;
 }
 
 .hero-container {
@@ -99,12 +108,135 @@ img {
   align-items: center;
 }
 
+.hero-image {
+  display: none;
+}
+
+/* sections */
+/* first  */
+
+.lenders h1,
+.lenders h2,
+.lenders p,
+.lenders h3 {
+  margin: 0;
+}
+
+.lenders h2 {
+  font-weight: 400;
+  margin-top: 32px;
+}
+
+.lenders p {
+  color: gray;
+}
+
+.lender-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 32px;
+  text-align: center;
+  justify-content: center;
+}
+
+.lender-box:last-child {
+  padding-bottom: 32px;
+}
+
+.lender-box i {
+  font-size: 48px;
+  color: var(--primary);
+}
+
+/* section
+second */
+
+.resources {
+  background-color: var(--background-color-two);
+}
+
+.resources .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resources h2 {
+  font-weight: 400;
+  padding-top: 42px;
+  margin: 0;
+}
+
+.resources p {
+  color: gray;
+  margin: 0;
+}
+
+.resources button {
+  padding: 14px 22px;
+  border: transparent;
+  background-color: var(--secondary);
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  align-self: flex-start;
+  margin-bottom: 42px;
+  cursor: pointer;
+}
+
+.about-box {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    45deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 97, 255, 1) 100%
+  );
+  color: white;
+  border-radius: 14px;
+  padding: 42px;
+  margin: 32px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-box h2,
+.about-box p,
+.about-box button {
+  margin: 0;
+}
+
+.about button {
+  align-self: center;
+  border: transparent;
+  cursor: pointer;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background-color: var(--primary);
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+}
+
+footer {
+  background-color: var(--background-color-two);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+
 @media (min-width: 600px) {
   .hide-unhide {
     display: flex;
   }
 
-  .ham {
+  .ham.fa-bars {
     display: none;
   }
 
@@ -115,5 +247,16 @@ img {
 
   .container {
     padding: 0 140px;
+  }
+
+  .hero-image {
+    display: inline;
+  }
+
+  .lenders-boxes {
+    display: flex;
+    gap: 42px;
+    padding-bottom: 32px;
+    align-items: baseline;
   }
 }
